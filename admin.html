@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Presenter Ziro Admin Dashboard</title>
+
+<link rel="stylesheet" href="admin.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<div class="logo">
+
+<h2>Presenter Ziro</h2>
+
+<p>Admin Panel</p>
+
+</div>
+
+<ul>
+
+<li class="active" data-page="dashboard">
+<i class="fas fa-chart-line"></i>
+Dashboard
+</li>
+
+<li data-page="homepage">
+<i class="fas fa-home"></i>
+Homepage
+</li>
+
+<li data-page="about">
+<i class="fas fa-user"></i>
+About
+</li>
+
+<li data-page="podcast">
+<i class="fas fa-microphone"></i>
+Podcast
+</li>
+
+<li data-page="gallery">
+<i class="fas fa-images"></i>
+Gallery
+</li>
+
+<li data-page="events">
+<i class="fas fa-calendar"></i>
+Events
+</li>
+
+<li data-page="bookings">
+<i class="fas fa-calendar-check"></i>
+Bookings
+</li>
+
+<li data-page="feedback">
+<i class="fas fa-comments"></i>
+Feedback
+</li>
+
+<li data-page="social">
+<i class="fas fa-share-alt"></i>
+Social Media
+</li>
+
+<li data-page="settings">
+<i class="fas fa-cog"></i>
+Settings
+</li>
+
+</ul>
+
+</div>
+
+<div class="main-content">
+
+<header>
+
+<h1>Dashboard</h1>
+
+<div class="admin-user">
+
+Administrator
+
+</div>
+
+</header>
+
+<section class="page active" id="dashboard">
+
+<div class="cards">
+
+<div class="card">
+
+<h2 id="totalVisitors">0</h2>
+
+<p>Visitors</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="totalBookings">0</h2>
+
+<p>Bookings</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="totalFeedback">0</h2>
+
+<p>Feedback</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="totalPodcast">0</h2>
+
+<p>Podcast Episodes</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="page" id="homepage">
+
+<h2>Edit Homepage</h2>
+
+<label>Hero Title</label>
+
+<input
+type="text"
+id="heroTitle">
+
+<label>Slogan</label>
+
+<input
+type="text"
+id="heroSlogan">
+
+<label>Description</label>
+
+<textarea
+id="heroDescription"></textarea>
+
+<button id="saveHomepage">
+
+Save Homepage
+
+</button>
+
+</section>
+<!-- ================= ABOUT EDITOR ================= -->
+
+<section class="page" id="about">
+
+<h2>About Editor</h2>
+
+<label>Name</label>
+
+<input
+type="text"
+id="aboutName"
+value="Presenter Ziro">
+
+<label>Slogan</label>
+
+<input
+type="text"
+id="aboutSlogan"
+value="Inspiring Through Media">
+
+<label>Biography</label>
+
+<textarea
+id="aboutBio"
+rows="8">
+
+Presenter Ziro is a content creator, presenter and educator based in Kilifi, Kenya.
+
+</textarea>
+
+<label>Profile Photo</label>
+
+<input
+type="file"
+id="profileImage">
+
+<button id="saveAbout">
+
+Save About Section
+
+</button>
+
+</section>
+
+<!-- ================= PODCAST ================= -->
+
+<section class="page" id="podcast">
+
+<h2>Podcast Manager</h2>
+
+<label>Podcast Title</label>
+
+<input
+type="text"
+id="podcastTitle"
+value="THE LIFE OF A TEACHER">
+
+<label>Description</label>
+
+<textarea
+id="podcastDescription"
+rows="8">
+
+Podcast Description
+
+</textarea>
+
+<label>YouTube Link</label>
+
+<input
+type="url"
+id="youtubeLink">
+
+<label>Podcast Cover</label>
+
+<input
+type="file"
+id="podcastCover">
+
+<button id="publishPodcast">
+
+Publish Podcast
+
+</button>
+
+<div id="podcastTable">
+
+</div>
+
+</section>
+
+<!-- ================= GALLERY ================= -->
+
+<section class="page" id="gallery">
+
+<h2>Gallery Manager</h2>
+
+<input
+
+type="file"
+
+id="galleryUpload"
+
+multiple>
+
+<button id="uploadGallery">
+
+Upload Images
+
+</button>
+
+<div class="gallery-preview">
+
+</div>
+
+</section>
+
+<!-- ================= EVENTS ================= -->
+
+<section class="page" id="events">
+
+<h2>Events Manager</h2>
+
+<label>Event Name</label>
+
+<input
+type="text"
+id="eventName">
+
+<label>Date</label>
+
+<input
+type="date"
+id="eventDate">
+
+<label>Venue</label>
+
+<input
+type="text"
+id="eventVenue">
+
+<label>Description</label>
+
+<textarea
+id="eventDescription">
+
+</textarea>
+
+<button id="saveEvent">
+
+Create Event
+
+</button>
+
+<div id="eventsList">
+
+</div>
+
+</section>
+
+<!-- ================= BOOKINGS ================= -->
+
+<section class="page" id="bookings">
+
+<h2>Bookings</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Name</th>
+
+<th>Phone</th>
+
+<th>Email</th>
+
+<th>Service</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody id="bookingTable">
+
+</tbody>
+
+</table>
+
+</section>
+
+<!-- ================= FEEDBACK ================= -->
+
+<section class="page" id="feedback">
+
+<h2>Feedback Centre</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Name</th>
+
+<th>Email</th>
+
+<th>Message</th>
+
+<th>Date</th>
+
+</tr>
+
+</thead>
+
+<tbody id="feedbackTable">
+
+</tbody>
+
+</table>
+
+</section>
+<!-- ================= SOCIAL MEDIA ================= -->
+
+<section class="page" id="social">
+
+<h2>Social Media Manager</h2>
+
+<label>YouTube</label>
+
+<input
+type="url"
+id="youtube"
+value="https://youtube.com/@phanuelziro">
+
+<label>Facebook</label>
+
+<input
+type="url"
+id="facebook"
+value="https://facebook.com/presenterziro">
+
+<label>Instagram</label>
+
+<input
+type="url"
+id="instagram"
+value="https://instagram.com/presenterziro">
+
+<label>TikTok</label>
+
+<input
+type="url"
+id="tiktok"
+value="https://tiktok.com/@phanuelziro">
+
+<button id="saveSocial">
+
+Save Social Media
+
+</button>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section class="page" id="contact">
+
+<h2>Contact Information</h2>
+
+<label>Email</label>
+
+<input
+type="email"
+id="email"
+value="phanuelziro@gmail.com">
+
+<label>Phone</label>
+
+<input
+type="text"
+id="phone"
+value="+254706563233">
+
+<label>Alternative Phone</label>
+
+<input
+type="text"
+id="phone2"
+value="+254743341345">
+
+<label>City</label>
+
+<input
+type="text"
+id="city"
+value="Kilifi, Kenya">
+
+<button id="saveContact">
+
+Save Contact Information
+
+</button>
+
+</section>
+
+<!-- ================= ANALYTICS ================= -->
+
+<section class="page" id="analytics">
+
+<h2>Website Analytics</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3 id="visitorsToday">
+
+0
+
+</h3>
+
+<p>Today's Visitors</p>
+
+</div>
+
+<div class="card">
+
+<h3 id="monthlyVisitors">
+
+0
+
+</h3>
+
+<p>Monthly Visitors</p>
+
+</div>
+
+<div class="card">
+
+<h3 id="podcastViews">
+
+0
+
+</h3>
+
+<p>Podcast Views</p>
+
+</div>
+
+<div class="card">
+
+<h3 id="galleryViews">
+
+0
+
+</h3>
+
+<p>Gallery Views</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= WEBSITE SETTINGS ================= -->
+
+<section class="page" id="settings">
+
+<h2>Website Settings</h2>
+
+<label>Website Name</label>
+
+<input
+type="text"
+id="siteName"
+value="Presenter Ziro">
+
+<label>Website Slogan</label>
+
+<input
+type="text"
+id="siteSlogan"
+value="Inspiring Through Media">
+
+<label>Primary Colour</label>
+
+<input
+type="color"
+id="primaryColor"
+value="#d4af37">
+
+<label>Dark Mode</label>
+
+<select id="theme">
+
+<option>Enabled</option>
+
+<option>Disabled</option>
+
+</select>
+
+<button id="saveSettings">
+
+Save Settings
+
+</button>
+
+</section>
+
+<!-- ================= WEBSITE PREVIEW ================= -->
+
+<section class="page" id="preview">
+
+<h2>Live Website Preview</h2>
+
+<iframe
+
+src="../index.html"
+
+width="100%"
+
+height="700"
+
+style="border:none;border-radius:12px;">
+
+</iframe>
+
+</section>
+
+<!-- ================= FIREBASE ================= -->
+
+<section class="page" id="firebase">
+
+<h2>Firebase Status</h2>
+
+<p>
+
+Authentication :
+<span id="authStatus">
+
+Disconnected
+
+</span>
+
+</p>
+
+<p>
+
+Firestore :
+<span id="dbStatus">
+
+Disconnected
+
+</span>
+
+</p>
+
+<p>
+
+Storage :
+<span id="storageStatus">
+
+Disconnected
+
+</span>
+
+</p>
+
+<button id="connectFirebase">
+
+Connect Firebase
+
+</button>
+
+</section>
+
+<!-- ================= ADMIN PROFILE ================= -->
+
+<section class="page" id="profile">
+
+<h2>Administrator</h2>
+
+<div class="profile-card">
+
+<img
+
+src="../assets/images/profile.jpg"
+
+width="140">
+
+<h3>Presenter Ziro</h3>
+
+<p>
+
+Website Administrator
+
+</p>
+
+<p>
+
+Email:
+
+phanuelziro@gmail.com
+
+</p>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 Presenter Ziro Studio CMS
+
+</p>
+
+</footer>
+
+<script type="module" src="admin.js"></script>
+
+</div>
+
+</body>
+
+</html>
